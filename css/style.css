@@ -1,4 +1,5 @@
 body{
+    background: #fff;
     color: #666666;
     font-family: "Open Sans", sans-serif;
 }
@@ -20,19 +21,43 @@ ul{
     z-index: 997;
 }
 
-#header .header-scrolled{
+.container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+#header #logo{
+    padding-left: 60px;
+}
+
+#header #logo{
+    float: left;
+}
+
+#header #logo h1 {
+    font-size: 34px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    /* letter-spacing: 3px; */
+}
+#header #logo h1 a {
+    color: #fff;
+    padding-left: 10px;
+    border-left: 4px solid #18d26e;
+}
+
+.header-scrolled{
     background:  rgba(0,0,0,0.9);
     padding: 20px 0;
     height: 72px;
     transition: all 0.5s;
 }
-.container-fluid{
-    width: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-left: auto;
-    margin-right: auto;
-}
+
 #logo{
     float: left;
     font-weight: 700;
@@ -41,16 +66,33 @@ ul{
 #nav-menu-container{
     float: right;
     padding-right: 60px;
+    margin: 0;
 }
 .nav-menu{
-    padding: 30px 8px 10px 8px;
-    list-style-type: none;
-    text-transform: uppercase;
-    display: inline-block;
-    text-decoration: none;
-    outline: none; 
+    margin : 0;
+    padding: 0;
+    list-style: none;
 }
 
+.nav-menu > li{
+    margin-left: 10px;
+    float: left;
+}
+
+.nav-menu a {
+    padding: 0 8px 10px 8px;
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    outline: none;
+}
+.nav-menu a:hover{
+    color: #18d26e;
+}
 .carousel-indicators li{
     width: 30px;
     height: 3px;
@@ -60,27 +102,21 @@ ul{
     width: 30px;
     height: 3px;
 }
-li{
-    float: left;
-    margin-left: 10px;
-}
 
 a{
     text-decoration: none !important;
     color: white;
 }
-a:hover{
-    color: #18d26e;
-}
 
 /*------------------------------------------------------------------------------------------
                                             section intro
 -------------------------------------------------------------------------------------------*/
-#intro{
+#intro {
+    display: table;
     height: 100vh;
     background: #000;
-    display: table;
 }
+
 
 /*------------------------------------------------------------------------------------------
                                                 main
