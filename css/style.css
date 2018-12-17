@@ -65,7 +65,8 @@
     color: white;
 }
 
-.nav-menu a:hover {
+.nav-menu a:hover,
+.nav-menu .menu-active a {
     color: #18d26e;
 }
 

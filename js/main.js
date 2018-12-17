@@ -22,6 +22,9 @@ $(".back-to-top").click(function () {
     $("body,html").animate({
         scrollTop: 0
     }, 800);
+    var navMenu = $(".menu-active").parent();
+    navMenu.children().removeClass("menu-active");
+    navMenu.children().first().addClass("menu-active");
     return false;
 });
 
@@ -33,7 +36,7 @@ $(function () {
     $(window).scroll(function () {
         var distance = parseInt(position - $(window).scrollTop());
 
-        if (distance < 100) {
+        if (distance < 200) {
             $('.progress-bar').each(function () {
                 $(this).css("width", $(this).data("max") + '%');
             });
@@ -41,4 +44,23 @@ $(function () {
             return false;
         }
     });
+});
+
+/*-----------handling event scroll to the part of the page-----------*/
+function goToByScroll(className) {
+    var className = className.replace("class-", "");
+    $("html,body").animate({
+        scrollTop: $("." + className).offset().top
+    }, 1000);
+}
+
+$(".nav-menu a").on("click", function () {
+    // Call the scroll function
+    goToByScroll($(this).attr("class"));
+});
+
+/*---------------change color menu when click on it----------------*/
+$(".nav-menu a").click(function(){
+    $(".nav-menu .menu-active").removeClass("menu-active");
+    $(this).closest("li").addClass("menu-active");
 });
