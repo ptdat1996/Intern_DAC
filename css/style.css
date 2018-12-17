@@ -519,59 +519,78 @@
 /*--------------------------
             contact
 --------------------------*/
-#contact{
+.contact {
     padding: 60px 0;
 }
 
-#contact .contact-info{
-    margin-bottom: 20px;
+.contact .row {
     text-align: center;
 }
 
-#contact .row{
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: 15px;
-    margin-left: 15px;
+.contact .row h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
 }
-#contact .contact-info i,#contact .contact-phone i, #contact .contact-email i{
+
+.contact .contact-address,
+.contact .contact-phone,
+.contact .contact-email {
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+.contact-address i,
+.contact-phone i,
+.contact-email i {
     font-size: 48px;
-    display: inline-block;
-    margin-bottom: 10px;
     color: #18d26e;
+    margin-bottom: 10px;
 }
 
-.form-row {
-    display: flex;
-    flex-wrap: wrap;
+.contact .row p {
+    margin-bottom: 0;
+    font-size: 16px;
 }
 
-.form-row >.col,.form-row > [class*=col-] {
-    padding-right: 5px;
-    padding-left: 5px;
+.contact .contact-phone {
+    border-left: 1px solid #ddd;
+    border-right:  1px solid #ddd;
 }
 
-#contact .form input,#contact .form textarea{
+.form-row > [class*=col-],
+.email-subject, 
+.email-message {
+    padding: 0 5px 0 5px;
+}
+
+.form-container textarea {
     padding: 10px 14px;
-    border-radius: 0;
-    box-shadow: none;
     font-size: 15px;
 }
 
-.form-group{
-    margin-bottom: 15px;
-    padding-left: 5px;
-    padding-right: 5px;
+.contact .form-container input,
+.contact .form-container textarea {
+    border-radius: 0;
+    padding: 10px 14px;
+    font-size: 16px;
+}
+.contact .button-submit {
+    text-align: center !important;
 }
 
-#contact .form button[type="submit"]{
+.contact .form-container button[type="submit"] {
     background: #18d26e;
     border: 0;
     padding: 10px 30px;
-    color: #fff;
-    transition: 0.4s;
+    color: white;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 20px;
+}
+
+.contact .form-container button[type="submit"]:hover {
+    background: #13a456;
 }
 /*------------------------------------------------------------------------------------------
                                                 footer
