@@ -465,49 +465,55 @@
 /*--------------------------
             team
 --------------------------*/
-#team {
+.team {
     background: #f7f7f7;
     padding: 60px 0;
 }
 
-#team .member{
-    position: relative;
+.team .member {
     text-align: center;
-    background: #000;
     margin-bottom: 20px;
+    position: relative;
+    border-radius: 50%;
 }
-#team .member .member-info{
+
+.team .member img {
+    width: 100%;
+    height: auto;
+}
+
+.team .member .member-info {
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(36, 62, 206, 0.6);
+    background: rgba(0, 0, 0, 0.7);
     color: #fff;
     visibility: hidden;
     opacity: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: 0.2s;
+    border-radius: 50%;
 }
 
-#team .member:hover .member-info{
+.team .member:hover .member-info {
     visibility: visible;
     opacity: 1;
 }
 
-#team .member-info-content{
-    transition: 0.2s;
-    transform: translateY(1em);
+.team .member .social {
+    font-size: 18px;
+    margin: 0 2px;
 }
 
-#team .member:hover .member-info-content {
-    margin-top: 0;
-    transition: margin 0.4s;
+.team .member .social a {
+    color:  #fff;
 }
-#team .member .member-info .member-info-content .social a i{
-    font-size: 20px;
+
+.team .member .social a:hover {
+    color: #18d26e;
 }
 
 /*--------------------------
