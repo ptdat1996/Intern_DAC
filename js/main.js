@@ -36,7 +36,7 @@ $(function () {
     $(window).scroll(function () {
         var distance = parseInt(position - $(window).scrollTop());
 
-        if (distance < 200) {
+        if (distance < 300) {
             $('.progress-bar').each(function () {
                 $(this).css("width", $(this).data("max") + '%');
             });
@@ -60,7 +60,16 @@ $(".nav-menu a").on("click", function () {
 });
 
 /*---------------change color menu when click on it----------------*/
-$(".nav-menu a").click(function(){
+$(".nav-menu a").click(function () {
     $(".nav-menu .menu-active").removeClass("menu-active");
     $(this).closest("li").addClass("menu-active");
+});
+
+/*------------------button mobile navbar toggle---------------------*/
+$(".mobile-nav-toggle").click(function () {
+    $(".mobile-nav-menu-container").css("width", "250px");
+});
+
+$(".btn-close").click(function(){
+    $(".mobile-nav-menu-container").css("width", "0");
 });

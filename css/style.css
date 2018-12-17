@@ -8,7 +8,7 @@
     right: 0;
     position: fixed;
     padding: 30px 0;
-    z-index: 999;
+    z-index: 997;
 }
 
 .header-scrolled {
@@ -733,4 +733,83 @@
 .back-to-top i {
     padding-top: 12px;
     color: white;
+}
+
+/*--------------------------------------------------------
+                for responsive queries
+--------------------------------------------------------*/
+.mobile-nav-toggle {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 25px 20px 0 0;
+    z-index: 999;
+    display: none;
+    background: none;
+    border: 0;
+    font-size: 30px;
+    cursor: pointer;   
+}
+
+.mobile-nav-menu-container {
+    height: 100%;
+    width : 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: #111;
+    overflow-x: hidden;
+    transition: 0.5s;   
+    z-index: 999;
+}
+
+.mobile-nav-toggle i {
+    color: white;
+}
+
+@media(max-width :768px){
+    .mobile-nav-toggle {
+        display: inline;
+    }
+
+    .nav-menu-container {
+        display: none;
+    }   
+
+    .header .logo {
+        padding-left: 20px;
+    }  
+    
+    .btn-close {
+        position: absolute;
+        top: 20px;
+        left: 25px;
+        font-size: 24px;
+        background: none;
+        border: 0;
+    }
+    .btn-close :hover {
+        color: #f1f1f1;
+    }
+
+    .btn-close i {
+        color: #818181;
+    }
+
+    .mobile-nav-menu {
+        margin-top: 50px;
+    }
+
+    .mobile-nav-menu a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 18px;
+        color: #818181;
+        display: block;
+        transition: 0.5s;        
+    }
+
+    .mobile-nav-menu a:hover {
+        color: #18d26e;
+    }
 }
