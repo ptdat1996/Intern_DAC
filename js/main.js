@@ -1,3 +1,12 @@
+/*------change header color when scroll----*/
+$(window).scroll(function () {
+    if ($(this).scrollTop() > 100) {
+        $(".header").addClass("header-scrolled");
+    } else {
+        $(".header").removeClass("header-scrolled");
+    }
+});
+
 window.onscroll = function(){
     onScrollWindow();
 }
@@ -17,11 +26,4 @@ $("#back-to-top").click(function(event){
     console.log('click');
 });
 
-$(window).scroll(function () {
-    if ($(this).scrollTop() > 100) {
-        $('#header').addClass('header-scrolled');
-    } else {
-        $('#header').removeClass('header-scrolled');
-    }
-});
 
