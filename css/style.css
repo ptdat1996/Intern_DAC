@@ -416,6 +416,51 @@
     margin-bottom: 0;
 }
 
+/*-----------------------------------
+                skill
+-----------------------------------*/
+.skills {
+    padding: 60px 0;
+}
+
+.skills .progress {
+    height: 35px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.skills .progress-bar {
+    text-align: left;
+    transition: 2s;
+}
+
+.skills .progress .bg-success {
+    background-color: #28a745 !important;
+}
+
+.skills .progress .bg-info {
+    background-color: #17a2b8 !important;
+}
+
+.skills .progress .bg-warning {
+    background-color: #ffc107 !important;
+}
+
+.skills .progress .bg-danger {
+    background-color: #dc3545 !important;
+}
+
+.skills .progress .skill {
+    line-height: 35px;
+    padding: 0;
+    margin: 0 0 0 20px;
+    text-transform: uppercase;
+}
+
+.skills .progress .skill .val {
+    float: right;
+    margin: 0 20px 0 0;
+}
 
 /*--------------------------
             team

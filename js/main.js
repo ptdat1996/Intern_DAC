@@ -27,3 +27,19 @@ $("#back-to-top").click(function(event){
 });
 
 
+/*-------- loading skill when scroll to-----*/
+$(function () {
+    var position = $(".skills").offset().top;
+
+    $(window).scroll(function () {
+        var distance = parseInt(position - $(window).scrollTop());
+
+        if (distance < 100) {
+            $('.progress-bar').each(function () {
+                $(this).css("width", $(this).data("max") + '%');
+            });
+        } else {
+            return false;
+        }
+    });
+});
