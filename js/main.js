@@ -7,23 +7,22 @@ $(window).scroll(function () {
     }
 });
 
-window.onscroll = function(){
-    onScrollWindow();
-}
+/*------handle event back to top----*/
+$(".back-to-top").hide();
 
-function onScrollWindow(){
-    if(document.body.scrollTop > 20 || document.documentElement.scrollTop > 20){
-        document.getElementById("back-to-top").style.display = "block";
+$(window).scroll(function () {
+    if ($(this).scrollTop() > 100) {
+        $('.back-to-top').fadeIn('slow');
+    } else {
+        $('.back-to-top').fadeOut('slow');
     }
-    else{
-        document.getElementById("back-to-top").style.display = "none";
-    }
-}
+});
 
-$("#back-to-top").click(function(event){
-    event.preventDefault();   
-    $("body").animate({scrollTop : 0} ,'300');
-    console.log('click');
+$(".back-to-top").click(function () {
+    $("body,html").animate({
+        scrollTop: 0
+    }, 800);
+    return false;
 });
 
 
