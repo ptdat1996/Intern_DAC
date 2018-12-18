@@ -48,10 +48,10 @@ $(function () {
 
 /*-----------handling event scroll to the part of the page-----------*/
 function goToByScroll(className) {
-    var className = className.replace("class-", "");
+    var className = className.replace("scroll-to-", "");
     $("html,body").animate({
         scrollTop: $("." + className).offset().top
-    }, 1000);
+    }, 1500);
 }
 
 $(".nav-menu a").on("click", function () {
@@ -70,6 +70,30 @@ $(".mobile-nav-toggle").click(function () {
     $(".mobile-nav-menu-container").css("width", "250px");
 });
 
-$(".btn-close").click(function(){
+$(".btn-close").click(function () {
     $(".mobile-nav-menu-container").css("width", "0");
+});
+
+/*-------------------mobile menu click event handle-----------------*/
+$(".mobile-nav-menu a").click(function () {
+    $(".mobile-nav-menu-container").css("width", "0");
+    goToByScroll($(this).attr("class"));
+});
+
+$(".mobile-nav-menu a").click(function () {
+    $(".mobile-nav-menu .mobile-menu-active").removeClass("mobile-menu-active");
+    $(this).addClass("mobile-menu-active");
+});
+
+
+$("body").click(function (e) {
+    var screenWidth = parseInt($(window).width());
+    var currentPosition = parseInt(e.pageX);
+    var currentWidth = parseInt($(".mobile-nav-menu-container").css("width"));
+
+    if((screenWidth - currentPosition) > 250) {
+        if(currentWidth > 0) {
+            $(".mobile-nav-menu-container").css("width", "0");
+        }
+    }
 });

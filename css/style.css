@@ -135,6 +135,7 @@
 
 .intro .carousel-content {
     text-align: center;
+    animation: fadeIn 3s ease;
 }
 
 .intro h2 {
@@ -311,9 +312,18 @@
     display: flex;
     flex-wrap: wrap;
 }
+
 .about .about-column {
     background: white;
     border-radius: 5px;
+}
+
+.about .about-column:hover .icon{
+    background-color: white;
+}
+
+.about .about-column:hover .icon i {
+    color: #18d26e;
 }
 
 .about .about-column .img {
@@ -752,6 +762,7 @@
 }
 
 .mobile-nav-menu-container {
+    /*display: none;*/
     height: 100%;
     width : 0;
     position: fixed;
@@ -812,4 +823,26 @@
     .mobile-nav-menu a:hover {
         color: #18d26e;
     }
+
+    .team .member {
+        margin: 80px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.mobile-nav-menu .mobile-menu-active {
+    color: #18d26e;
+}
+
+.open {
+    display: block !important;
 }
