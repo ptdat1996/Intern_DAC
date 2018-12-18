@@ -87,12 +87,11 @@ $(".mobile-nav-menu a").click(function () {
 
 
 $("body").click(function (e) {
-    var screenWidth = parseInt($(window).width());
-    var currentPosition = parseInt(e.pageX);
     var currentWidth = parseInt($(".mobile-nav-menu-container").css("width"));
-
-    if((screenWidth - currentPosition) > 250) {
-        if(currentWidth > 0) {
+    if (currentWidth > 0) {
+        var screenWidth = parseInt($(window).width());
+        var currentPosition = parseInt(e.pageX);
+        if (screenWidth - currentPosition > currentWidth) {
             $(".mobile-nav-menu-container").css("width", "0");
         }
     }

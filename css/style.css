@@ -777,6 +777,11 @@
 .mobile-nav-toggle i {
     color: white;
 }
+@media(min-width : 768px){
+    .mobile-nav-menu-container {
+        display: none;
+    }
+}
 
 @media(max-width :768px){
     .mobile-nav-toggle {
