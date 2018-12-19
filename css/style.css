@@ -822,7 +822,7 @@
         font-size: 18px;
         color: #818181;
         display: block;
-        transition: 0.5s;        
+        transition: 1s;        
     }
 
     .mobile-nav-menu a:hover {
