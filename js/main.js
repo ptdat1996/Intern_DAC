@@ -1,23 +1,16 @@
-/*------change header color when scroll----*/
+/*------change header color and hide/show back to top button when scroll----*/
+$(".back-to-top").hide();
 $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
         $(".header").addClass("header-scrolled");
-    } else {
-        $(".header").removeClass("header-scrolled");
-    }
-});
-
-/*------handle event back to top----*/
-$(".back-to-top").hide();
-
-$(window).scroll(function () {
-    if ($(this).scrollTop() > 100) {
         $('.back-to-top').fadeIn('slow');
     } else {
+        $(".header").removeClass("header-scrolled");
         $('.back-to-top').fadeOut('slow');
     }
 });
 
+/*------handle event back to top----*/
 $(".back-to-top").click(function () {
     $("body,html").animate({
         scrollTop: 0
