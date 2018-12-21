@@ -1,0 +1,168 @@
+/*--------------------------------------------------------------
+                        style login
+--------------------------------------------------------------*/
+
+/*----------------background---------------------*/
+.background-login {
+    background-image: url(../image/bg-01.jpg);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+}
+
+.background-login::before{
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(93,84,240,0.5);
+}
+
+/*----------------container---------------------*/
+.container-login {
+    width: 400px;
+    border-radius: 10px;
+    padding: 80px 55px 30px 55px;
+    background: white;
+}
+
+/*----------------form title---------------------*/
+.form-title {
+    color: #4b2354;
+    text-align: center;
+    margin: 0 0 30px 0;
+}
+
+/*----------------form input---------------------*/
+.form-input {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: none;
+}
+
+.form-input input {
+    width: 100%;
+    height: 60px;
+    font-size: 16px;
+    color: #4b2354;
+    padding: 0 20px 0 23px;
+}
+
+input {
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color:  #4b2354;
+}
+
+input:focus {
+    border: none;
+}
+
+/*----------------form remember me---------------------*/
+.form-remember {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/*-------------------button login-----------------------*/
+
+.form-button {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.form-button button {
+    width: 160px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    background-color: #bd59d4;
+    font-size: 14px;
+    border-radius: 25px;
+    color: white;
+    border: none;
+}
+
+/*-------------------login with another text---------------------*/
+.form-login-with-another {
+    padding: 60px 0 20px 0;
+    text-align: center;
+}
+
+.form-login-with-another p {
+    font-size: 16px;
+    color: #999999;
+}
+
+/*-------------------login with social---------------------*/
+.social-login {
+    display: grid;
+}
+
+.social-login .btn-login-facebook {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    border-radius: 25px;
+    color: white;
+    border: 0;
+    background-color: #395697;
+}
+
+.social-login .btn-login-google {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    border-radius: 25px;
+    color: white;
+    border: 0;
+    background-color: #E74B37;
+}
+
+.social-login i {
+    margin-right: 10px;
+}
+
+/*-------------------forgot password---------------------*/
+.forgot-password {
+    padding: 60px 0 10px 0;
+    text-align: center;
+}
+
+.forgot-password a {
+    font-size: 16px;
+    color: #4b2354;
+}
+
+/*-------------------sign up---------------------*/
+.go-sign-up {
+    padding: 0 0 20px 0;
+    text-align: center;
+}
+.go-sign-up a {
+    font-size: 16px;
+    color: #4b2354;
+}
+
+/*-------------------responsive---------------------*/
+@media(max-width : 480px) {
+    .background-login {
+        padding: 0 15px 0 15px;
+    }
+}
