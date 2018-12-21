@@ -1,0 +1,186 @@
+/*--------------------------------------------------------------
+                        style sign up
+--------------------------------------------------------------*/
+.background-signup {
+    background-image: url(../image/bg-01.jpg);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+}
+
+.background-signup::before{
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background:  linear-gradient(90deg, rgba(0,168,255,0.5), rgba(185,0,255,0.5))
+}
+
+/*----------------container---------------------*/
+.container-signup {
+    width: 420px;
+    border-radius: 10px;
+    background: white;
+    padding: 30px 30px 30px 30px;
+}
+
+/*----------------form title---------------------*/
+.form-title {
+    color: #4b2354;
+    text-align: center;
+    margin: 20px 0 30px 0;
+}
+
+/*----------------form input---------------------*/
+.form-input {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+    border: none;
+}
+
+.form-input i {
+    position: absolute;
+    font-size: 16px;
+    top: 20px;
+}
+
+.form-input input {
+    width: 100%;
+    height: 60px;
+    font-size: 16px;
+    color: #4b2354;
+    padding: 0 20px 0 23px;
+}
+
+input {
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color:  #4b2354;
+}
+
+input:focus {
+    border: none;
+}
+
+/*----------------check box term of service---------------------*/
+.agree-term {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    
+}
+.agree-term p {
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0 10px 10px;
+}
+
+.agree-term a {
+    font-size: 16px;
+    color: #4b2354;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin: 10px 0 10px 0;
+}
+
+/*-------------------button signup-----------------------*/
+.form-button {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.form-button button {
+    width: 160px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    background-color: #bd59d4;
+    font-size: 14px;
+    border-radius: 25px;
+    color: white;
+    border: none;
+}
+
+.form-button button:hover {
+    background-color: #4b2354;
+}
+
+/*-------------------sign up with text------------------------*/
+.form-sign-up-with-another {
+    padding: 20px 0 20px 0;
+    text-align: center;
+}
+
+.form-sign-up-with-another p {
+    font-size: 16px;
+    color: #999999;
+}
+/*-------------------social sign up------------------------*/
+.social-signup {
+    display: grid;
+}
+
+.social-signup .btn-signup-facebook,
+.social-signup .btn-signup-google {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    border-radius: 25px;
+    color: white;
+    border: 0;
+    
+}
+
+.social-signup .btn-signup-facebook {
+    background-color: #395697;
+}
+
+.social-signup .btn-signup-google {
+    background-color: #E74B37;
+}
+
+.social-signup i {
+    margin-right: 10px;
+}
+
+/*-------------------have an account-----------------------*/
+.have-account {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.have-account a {
+    font-size: 16px;
+    color: #4b2354;
+}
+
+/*-------------------responsive-----------------------*/
+@media(max-width : 400px) {
+    .background-signup {
+        height: auto;
+    }
+
+    .container-signup {
+        border-radius: 0;
+        padding: 0 15px 0 15px;
+    }
+}
