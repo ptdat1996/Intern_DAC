@@ -11,16 +11,19 @@ $(window).scroll(function () {
 });
 
 /*------handle event back to top----*/
-$(".back-to-top").click(function () {
+function backToTop(){
     $("body,html").animate({
         scrollTop: 0
     }, 800);
+}
+
+$(".back-to-top").click(function () {
+    backToTop();
     var navMenu = $(".menu-active").parent();
     navMenu.children().removeClass("menu-active");
     navMenu.children().first().addClass("menu-active");
     return false;
 });
-
 
 /*-------- loading skill when scroll to-----*/
 $(function () {
@@ -41,6 +44,10 @@ $(function () {
 
 /*-----------handling event scroll to the part of the page-----------*/
 function goToByScroll(className) {
+    if(className === "home"){
+        backToTop();
+        return false;
+    }
     var className = className.replace("scroll-to-", "");
     $("html,body").animate({
         scrollTop: $("." + className).offset().top
@@ -48,6 +55,11 @@ function goToByScroll(className) {
 }
 
 $(".nav-menu a").on("click", function () {
+    // Call the scroll function
+    goToByScroll($(this).attr("class"));
+});
+
+$(".footer-links a").on("click", function () {
     // Call the scroll function
     goToByScroll($(this).attr("class"));
 });
@@ -89,3 +101,5 @@ $("body").click(function (e) {
         }
     }
 });
+
+/*--------------------------change menu active when scroll to part of website-------------------------*/
