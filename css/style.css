@@ -65,6 +65,10 @@
     color: white;
 }
 
+.nav-menu a i {
+    margin-right: 5px;
+}
+
 .nav-menu a:hover,
 .nav-menu .menu-active a {
     color: #18d26e;
