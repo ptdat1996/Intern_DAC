@@ -1,9 +1,11 @@
 package com.dac.demo.controller;
 
 import com.dac.demo.model.Employee;
+import com.dac.demo.service.CustomerService;
 import com.dac.demo.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +19,10 @@ public class HomeController {
 
     @Autowired
     private EmployeeService employeeService;
+
+    @Autowired
+    private CustomerService customerService;
+
     // go to login page
     @GetMapping("/login")
     public String login(){
@@ -32,7 +38,7 @@ public class HomeController {
             // found employee
             if(employee.getPassword().equals(password)){
                 //password match
-                return "/dashboard";
+                return "redirect:/admin/dashboard";
             }
             else {
                 //password not match
@@ -43,5 +49,11 @@ public class HomeController {
             // not found
             return "/error";
         }
+    }
+
+    @GetMapping("/dashboard")
+    public String dashboard(ModelMap modelMap){
+        modelMap.addAttribute("listCustomer",customerService.findAll());
+        return "/dashboard";
     }
 }

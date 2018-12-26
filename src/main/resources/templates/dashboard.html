@@ -1,10 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
+
+    <link th:href="@{/image/favicon.png}" rel="icon">
+
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}" type="text/css"/>
+    <link rel="stylesheet" th:href="@{/css/font-awesome.css}" type="text/css"/>
+    <link rel="stylesheet" th:href="@{/css/style.css}" type="text/css"/>
 </head>
 <body>
-<h1>Success!</h1>
+<div class="container">
+    <h1>Welcome to my demo</h1>
+
+    <div class="container-button">
+        <button class="btn btn-success">Add new customer</button>
+    </div>
+
+    <div class="">
+
+    </div>
+</div>
+
+<script th:src="@{/js/jquery-3.3.1.js}" type="text/javascript"></script>
+<script th:src="@{/js/bootstrap.min.js}" type="text/javascript"></script>
 </body>
 </html>
