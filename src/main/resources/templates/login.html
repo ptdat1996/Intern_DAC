@@ -20,16 +20,16 @@
     <div class="container-login">
         <h2 class="form-title">Login</h2>
 
-        <form class="form-login">
+        <form class="form-login" method="post" th:action="@{/admin/login}">
 
             <div class="form-input">
                 <i class="fa fa-user"></i>
-                <input type="email" placeholder="Your email" />
+                <input type="text" placeholder="Your user name" name="userName"/>
             </div>
 
             <div class="form-input">
                 <i class="fa fa-lock"></i>
-                <input type="password" placeholder="Your password" />
+                <input type="password" placeholder="Your password" name="password"/>
             </div>
 
             <div class="form-remember">
