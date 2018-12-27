@@ -1,5 +1,7 @@
 package com.dac.demo.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -29,6 +31,7 @@ public class Customer {
     private String email;
 
     @Column(name = "date_of_birth")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dob;
 
     public int getId() {
