@@ -49,4 +49,10 @@ public class CustomerController {
         customerService.save(cus);
         return "redirect:/employee/dashboard";
     }
+
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable("id")Integer id){
+        customerService.deleteById(id);
+        return "redirect:/employee/dashboard";
+    }
 }

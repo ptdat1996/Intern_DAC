@@ -11,4 +11,6 @@ public interface CustomerService {
     Customer save(Customer customer);
 
     Optional<Customer> findById(Integer id);
+
+    void deleteById(Integer id);
 }

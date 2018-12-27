@@ -29,4 +29,9 @@ public class CustomerServiceImpl implements CustomerService {
     public Optional<Customer> findById(Integer id) {
         return customerRepository.findById(id);
     }
+
+    @Override
+    public void deleteById(Integer id) {
+        customerRepository.deleteById(id);
+    }
 }

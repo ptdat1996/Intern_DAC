@@ -2,8 +2,9 @@ h1{
     text-align: center;
 }
 
-.container-button{
-
+.container-button a{
+    color: white;
+    text-decoration: none;
 }
 .container-table table{
     margin-top: 20px;
