@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping("/admin")
-public class HomeController {
+@RequestMapping("/employee")
+public class EmployeeController {
 
     @Autowired
     private EmployeeService employeeService;

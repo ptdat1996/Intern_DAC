@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface EmployeeRepository extends CrudRepository<Employee, Integer> {
 
-    @Query(nativeQuery = true,name = "SELECT * FROM employees WHERE user_name := userName")
+    @Query(nativeQuery = true,name = "SELECT * FROM employees WHERE user_name = :userName")
     Employee findByUserName(@Param("userName") String userName);
 }
