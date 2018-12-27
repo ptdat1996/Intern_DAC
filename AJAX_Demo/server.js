@@ -7,6 +7,9 @@ var path = require("path");
 
 const port = 3000;
 
+const emailConst = "abc@gmail.com";
+const passwordConst = "1";
+
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -26,8 +29,8 @@ app.post('/login', (request, response) => {
   var email = request.body.email;
   var password = request.body.password;
 
-  if (email === "abc@gmail.com") {
-    if (password === "1") {
+  if (email === emailConst) {
+    if (password === passwordConst) {
       response.json("Login success!");
     }
     else {
