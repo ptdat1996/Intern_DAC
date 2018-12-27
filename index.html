@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home page</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="./image/favicon.png" rel="icon">
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/font-awesome.css" />
+
+    <link rel="stylesheet" href="./css/style.css" />
+
+</head>
+
+<body>
+
+    <button type="button" class="mobile-nav-toggle" id="btn-open">
+        <i class="fa fa-bars"></i>
+    </button>
+
+    <!----------------Header----------------->
+    <header class="header">
+        <div class="container-fluid">
+            <div class="logo">
+                <h1>
+                    <a href="#">Project</a>
+                </h1>
+            </div>
+            <nav class="nav-menu-container">
+                <ul class="nav-menu">
+                    <li class="menu-active"><a href="#" class="home">Home</a></li>
+                    <li><a href="#" class="scroll-to-about">About us</a></li>
+                    <li><a href="#" class="scroll-to-service">Service</a></li>
+                    <li><a href="#" class="scroll-to-team">Team</a></li>
+                    <li><a href="#" class="scroll-to-contact">Contact</a></li>
+                    <li><a href="./login.html" target="_blank"><i class="fa fa-sign-in"></i>Login</a></li>
+                    <li><a href="./signup.html" target="_blank"><i class="fa fa-user"></i>Sign up</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!----------------End Header------------->
+
+    <!----------------Slide show------------->
+    <section class="intro">
+        <div class="intro-container">
+            <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                    <li data-target="#myCarousel" data-slide-to="4"></li>
+                </ol>
+
+                <div class="carousel-inner">
+                    <div class="carousel-item item active" style="background-image: url('./image/intro-carousel/1.jpg');">
+                        <div class="carousel-container">
+                            <div class="carousel-content">
+                                <h2>Magnam aliquam quaerat</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore
+                                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                    laboris nisi ut
+                                    aliquip ex ea commodo consequat.</p>
+                                <a href="#" class="btn-get-started scrollto">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item item" style="background-image: url('./image/intro-carousel/2.jpg');">
+                        <div class="carousel-container">
+                            <div class="carousel-content">
+                                <h2>Magnam aliquam quaerat</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore
+                                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                    laboris nisi ut
+                                    aliquip ex ea commodo consequat.</p>
+                                <a href="#" class="btn-get-started scrollto">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item item" style="background-image: url('./image/intro-carousel/3.jpg');">
+                        <div class="carousel-container">
+                            <div class="carousel-content">
+                                <h2>Magnam aliquam quaerat</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore
+                                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                    laboris nisi ut
+                                    aliquip ex ea commodo consequat.</p>
+                                <a href="#" class="btn-get-started scrollto">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item item" style="background-image: url('./image/intro-carousel/4.jpg');">
+                        <div class="carousel-container">
+                            <div class="carousel-content">
+                                <h2>Magnam aliquam quaerat</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore
+                                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                    laboris nisi ut
+                                    aliquip ex ea commodo consequat.</p>
+                                <a href="#" class="btn-get-started scrollto">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item item" style="background-image: url('./image/intro-carousel/5.jpg');">
+                        <div class="carousel-container">
+                            <div class="carousel-content">
+                                <h2>Magnam aliquam quaerat</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore
+                                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                    laboris nisi ut
+                                    aliquip ex ea commodo consequat.</p>
+                                <a href="#" class="btn-get-started scrollto">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon">
+                        <i class="fa fa-angle-left"></i>
+                    </span>
+                    <span class="sr-only">Previous</span>
+                </a>
+
+                <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon">
+                        <i class="fa fa-angle-right"></i>
+                    </span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+
+
+
+        </div>
+    </section>
+    <!----------------End slide show--------->
+
+    <!----------------Content---------------->
+    <main class="main">
+
+        <section class="featured-services">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 box">
+                        <i class="fa fa-bookmark-o"></i>
+                        <h4 class="title"><a href="">Lorem Ipsum Delino</a></h4>
+                        <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
+                            excepturi sint
+                            occaecati cupiditate non provident
+                        </p>
+                    </div>
+                    <div class="col-md-4 box">
+                        <i class="fa fa-clock-o"></i>
+                        <h4 class="title"><a href="">Dolor Sitema</a></h4>
+                        <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                            ex ea
+                            commodo consequat tarad limino ata
+                        </p>
+                    </div>
+                    <div class="col-md-4 box">
+                        <i class="fa fa-heart-o"></i>
+                        <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
+                        <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                            dolore eu
+                            fugiat nulla pariatur
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="container">
+                <header class="section-header">
+                    <h3>About Us</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et
+                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                        aliquip ex
+                        ea commodo consequat.</p>
+                </header>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="about-column">
+                            <div class="img">
+                                <img src="./image/about-mission.jpg" alt="" class="img-fluid">
+                                <div class="icon">
+                                    <i class="fa fa-tachometer"></i>
+                                </div>
+                            </div>
+                            <h2 class="title"><a href="#">Our Mission</a></h2>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor ut labore et dolore
+                                magna aliqua.
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                                ea commodo
+                                consequat.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="about-column">
+                            <div class="img">
+                                <img src="./image/about-plan.jpg" alt="" class="img-fluid">
+                                <div class="icon">
+                                    <i class="fa fa-file-text-o"></i>
+                                </div>
+                            </div>
+                            <h2 class="title"><a href="#">Our Plan</a></h2>
+                            <p>
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem doloremque laudantium,
+                                totam rem
+                                aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
+                                dicta sunt
+                                explicabo.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="about-column">
+                            <div class="img">
+                                <img src="./image/about-vision.jpg" alt="" class="img-fluid">
+                                <div class="icon">
+                                    <i class="fa fa-eye"></i>
+                                </div>
+                            </div>
+                            <h2 class="title"><a href="#">Our Vision</a></h2>
+                            <p>
+                                Nemo enim ipsam voluptatem quia voluptas sit aut odit aut fugit, sed quia magni dolores
+                                eos qui ratione
+                                voluptatem sequi nesciunt Neque porro quisquam est, qui dolorem ipsum quia dolor sit
+                                amet.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="service">
+            <div class="container">
+                <header class="section-header">
+                    <h3>Services</h3>
+                    <p>Laudem latine persequeris id sed, ex fabulas delectus quo. No vel partiendo abhorreant
+                        vituperatoribus, ad
+                        pro quaestio laboramus. Ei ubique vivendum pro. At ius nisl accusam lorenta zanos paradigno
+                        tridexa
+                        panatarel.</p>
+                </header>
+
+                <div class="row">
+                    <div class="col-md-4 box">
+                        <div class="icon">
+                            <i class="fa fa-tag"></i>
+                        </div>
+                        <h4 class="title"><a href="">Lorem Ipsum</a></h4>
+                        <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
+                            excepturi sint
+                            occaecati cupiditate non provident
+                        </p>
+                    </div>
+                    <div class="col-md-4 box">
+                        <div class="icon">
+                            <i class="fa fa-bookmark-o"></i>
+                        </div>
+                        <h4 class="title"><a href="">Dolor Sitema</a></h4>
+                        <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                            ex ea
+                            commodo consequat tarad limino ata
+                        </p>
+                    </div>
+                    <div class="col-md-4 box">
+                        <div class="icon">
+                            <i class="fa fa-file-text-o"></i>
+                        </div>
+                        <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
+                        <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                            dolore eu
+                            fugiat nulla pariatur
+                        </p>
+                    </div>
+                    <div class="col-md-4 box">
+                        <div class="icon">
+                            <i class="fa fa-tachometer"></i>
+                        </div>
+                        <h4 class="title"><a href="">Magni Dolores</a></h4>
+                        <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                            officia deserunt
+                            mollit anim id est laborum
+                        </p>
+                    </div>
+                    <div class="col-md-4 box">
+                        <div class="icon">
+                            <i class="fa fa-bar-chart-o"></i>
+                        </div>
+                        <h4 class="title"><a href="">Nemo Enim</a></h4>
+                        <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui
+                            blanditiis
+                            praesentium voluptatum deleniti atque
+                        </p>
+                    </div>
+                    <div class="col-md-4 box">
+                        <div class="icon">
+                            <i class="fa fa-street-view"></i>
+                        </div>
+                        <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
+                        <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero
+                            tempore, cum
+                            soluta nobis est eligendi
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills">
+            <div class="container">
+                <header class="section-header">
+                    <h3>My Skills</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et
+                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                        aliquip
+                    </p>
+                </header>
+
+                <div class="skill-content">
+                    <div class="progress">
+                        <div class="progress-bar bg-success" role="progressbar" data-max="100">
+                            <span class="skill">Assembly <i class="val">100%</i></span>
+                        </div>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-bar bg-info" role="progressbar" data-max="90">
+                            <span class="skill">Matlab <i class="val">90%</i></span>
+                        </div>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-bar bg-warning" role="progressbar" data-max="75">
+                            <span class="skill">Arduino <i class="val">75%</i></span>
+                        </div>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-bar bg-danger" role="progressbar" data-max="55">
+                            <span class="skill">Photoshop <i class="val">55%</i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="team">
+            <div class="container">
+                <div class="section-header">
+                    <h3>Team</h3>
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="member">
+                            <img src="./image/team-1.jpg" class="img-circle" alt="">
+                            <div class="member-info">
+                                <div class="member-info-content">
+                                    <h4>Walter White</h4>
+                                    <span>Chief Executive Officer</span>
+                                    <div class="social">
+                                        <a href=""><i class="fa fa-twitter"></i></a>
+                                        <a href=""><i class="fa fa-facebook"></i></a>
+                                        <a href=""><i class="fa fa-google-plus"></i></a>
+                                        <a href=""><i class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="member">
+                            <img src="./image/team-2.jpg" class="img-circle" alt="">
+                            <div class="member-info">
+                                <div class="member-info-content">
+                                    <h4>Sarah Jhonson</h4>
+                                    <span>Product Manager</span>
+                                    <div class="social">
+                                        <a href=""><i class="fa fa-twitter"></i></a>
+                                        <a href=""><i class="fa fa-facebook"></i></a>
+                                        <a href=""><i class="fa fa-google-plus"></i></a>
+                                        <a href=""><i class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="member">
+                            <img src="./image/team-3.jpg" class="img-circle" alt="">
+                            <div class="member-info">
+                                <div class="member-info-content">
+                                    <h4>William Anderson</h4>
+                                    <span>CTO</span>
+                                    <div class="social">
+                                        <a href=""><i class="fa fa-twitter"></i></a>
+                                        <a href=""><i class="fa fa-facebook"></i></a>
+                                        <a href=""><i class="fa fa-google-plus"></i></a>
+                                        <a href=""><i class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="member">
+                            <img src="./image/team-4.jpg" class="img-circle" alt="">
+                            <div class="member-info">
+                                <div class="member-info-content">
+                                    <h4>Amanda Jepson</h4>
+                                    <span>Accountant</span>
+                                    <div class="social">
+                                        <a href=""><i class="fa fa-twitter"></i></a>
+                                        <a href=""><i class="fa fa-facebook"></i></a>
+                                        <a href=""><i class="fa fa-google-plus"></i></a>
+                                        <a href=""><i class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h3>Contact Us</h3>
+                    <p>
+                        Please contact me to the information below
+                    </p>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="contact-address">
+                            <i class="fa fa-map-marker"></i>
+                            <h3>Address</h3>
+                            <p>344 2/9 Street, DaNang 55000, VietNam</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="contact-phone">
+                            <i class="fa fa-phone"></i>
+                            <h3>Phone Number</h3>
+                            <p><a href="tel:+155895548855">+84 123 456 789</a></p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="contact-email">
+                            <i class="fa fa-envelope-o"></i>
+                            <h3>Email</h3>
+                            <p><a href="mailto:info@example.com">kidgiangho1996@gmail.com</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-container">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-6 customer-name">
+                                <input type="text" class="form-control" placeholder="Your name" required />
+                            </div>
+                            <div class="form-group col-md-6 customer-email">
+                                <input type="email" class="form-control" placeholder="Your email" required />
+                            </div>
+                        </div>
+                        <div class="form-group email-subject">
+                            <input type="text" class="form-control" placeholder="Subject" />
+                        </div>
+                        <div class="form-group email-message">
+                            <textarea class="form-control" placeholder="Message" rows="5"></textarea>
+                        </div>
+                        <div class="button-submit">
+                            <button type="submit">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!----------------End content------------>
+
+    <!----------------Footer----------------->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 footer-info">
+                        <h3>Project</h3>
+                        <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna
+                            derita valies
+                            darta donna mare fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin
+                            fermentum
+                            leo. Amet volutpat consequat mauris nunc congue.
+                        </p>
+                    </div>
+
+                    <div class="col-md-3 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><i class="fa fa-angle-right"></i> <a href="#" class="home">Home</a></li>
+                            <li><i class="fa fa-angle-right"></i> <a href="#" class="scroll-to-about">About us</a></li>
+                            <li><i class="fa fa-angle-right"></i> <a href="#" class="scroll-to-service">Services</a></li>
+                            <li><i class="fa fa-angle-right"></i> <a href="#" class="scroll-to-team">Team</a></li>
+                            <li><i class="fa fa-angle-right"></i> <a href="#" class="scroll-to-contact">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-3 footer-contact">
+                        <h4>Contact Us</h4>
+                        <p>
+                            A108 Adam Street <br>
+                            New York, NY 535022<br>
+                            United States <br>
+                            <strong>Phone:</strong> +1 5589 55488 55<br>
+                            <strong>Email:</strong> info@example.com<br>
+                        </p>
+
+                        <div class="social-links">
+                            <a href="https://twitter.com/" class="twitter"><i class="fa fa-twitter"></i></a>
+                            <a href="https://facebook.com/" class="facebook"><i class="fa fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/" class="instagram"><i class="fa fa-instagram"></i></a>
+                            <a href="https://plus.google.com/" class="google-plus"><i class="fa fa-google-plus"></i></a>
+                            <a href="https://www.linkedin.com/" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 footer-newsletter">
+                        <h4>Our Newsletter</h4>
+                        <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam
+                            illum dolore
+                            legam minim quorum culpa amet magna export quem marada parida nodela caramase seza.</p>
+                        <form action="" method="post">
+                            <input type="email" name="email"><input type="submit" value="Subscribe">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!----------------End footer------------->
+
+    <a href="#" class="back-to-top">
+        <i class="fa fa-chevron-up"></i>
+    </a>
+
+    <div class="mobile-nav-menu-container">
+        <button class="btn-close">
+            <i class="fa fa-times"></i> 
+        </button>
+        <div class="mobile-nav-menu">
+            <a href="#" class="mobile-menu-active">Home</a>
+            <a href="#" class="scroll-to-about">About us</a>
+            <a href="#" class="scroll-to-service">Service</a>
+            <a href="#" class="scroll-to-team">Team</a>
+            <a href="#" class="scroll-to-contact">Contact</a>
+        </div>
+
+    </div>
+    <script src="./js/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="./js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="./js/main.js" type="text/javascript"></script>
+</body>
+
+</html>
