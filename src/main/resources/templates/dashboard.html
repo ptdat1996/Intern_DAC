@@ -34,9 +34,9 @@
                 <td th:text="${item.email}"></td>
                 <td th:text="${item.dob}"></td>
                 <td>
-                    <a><i class="fa fa-eye"></i> View</a> |
-                    <a><i class="fa fa-pencil"></i> Edit</a> |
-                    <a><i class="fa fa-remove"></i> Delete</a>
+                    <a th:href="@{'/customer/view/' + ${item.id}}"><i class="fa fa-eye"></i> View</a> |
+                    <a th:href="@{'/customer/edit/' + ${item.id}}"><i class="fa fa-pencil"></i> Edit</a> |
+                    <a th:href="@{'/customer/delete/' + ${item.id}}"><i class="fa fa-remove"></i> Delete</a>
                 </td>
             </tr>
         </table>

@@ -5,10 +5,7 @@ import com.dac.demo.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/customer")
@@ -32,6 +29,23 @@ public class CustomerController {
         cus.setEmail(customer.getEmail());
         cus.setDob(customer.getDob());
 
+        customerService.save(cus);
+        return "redirect:/employee/dashboard";
+    }
+
+    @GetMapping("/edit/{id}")
+    public String edit(ModelMap modelMap, @PathVariable("id") Integer id){
+        modelMap.addAttribute("customer",customerService.findById(id).get());
+        return "/edit";
+    }
+
+    @PostMapping("/edit")
+    public String editSubmit(@ModelAttribute("customer")Customer customer){
+        Customer cus = customerService.findById(customer.getId()).get();
+        cus.setPassword(customer.getPassword());
+        cus.setFullName(customer.getFullName());
+        cus.setEmail(customer.getEmail());
+        cus.setDob(customer.getDob());
         customerService.save(cus);
         return "redirect:/employee/dashboard";
     }
