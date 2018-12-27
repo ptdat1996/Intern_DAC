@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View</title>
+
+    <link th:href="@{/image/favicon.png}" rel="icon">
+
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}" type="text/css"/>
+    <link rel="stylesheet" th:href="@{/css/font-awesome.css}" type="text/css"/>
+</head>
+<body>
+<div class="container">
+    <h1>Detail</h1>
+
+    <table>
+        <tr>
+            <td>User name :</td>
+            <td>
+                <span th:text="${customer.userName}"></span>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Password :</td>
+            <td>
+                <span th:text="${customer.password}"></span>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Full name :</td>
+            <td>
+                <span th:text="${customer.fullName}"></span>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Email :</td>
+            <td>
+                <span th:text="${customer.email}"></span>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Date of birth :</td>
+            <td>
+                <span th:text="${customer.dob}"></span>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a th:href="@{/employee/dashboard}">Back to list</a></td>
+        </tr>
+    </table>
+</div>
+<link rel="stylesheet" th:href="@{/css/detail.css}" type="text/css"/>
+<script th:src="@{/js/jquery-3.3.1.js}" type="text/javascript"></script>
+<script th:src="@{/js/bootstrap.min.js}" type="text/javascript"></script>
+</body>
+</html>

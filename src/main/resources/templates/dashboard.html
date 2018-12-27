@@ -16,6 +16,7 @@
 
     <div class="container-button">
         <button class="btn btn-success">
+            <i class="fa fa-plus"></i>
             <a th:href="@{/customer/add}">Add new customer</a>
         </button>
     </div>
@@ -36,7 +37,7 @@
                 <td th:text="${item.email}"></td>
                 <td th:text="${item.dob}"></td>
                 <td>
-                    <a th:href="@{'/customer/view/' + ${item.id}}"><i class="fa fa-eye"></i> View</a> |
+                    <a th:href="@{'/customer/detail/' + ${item.id}}"><i class="fa fa-eye"></i> Detail</a> |
                     <a th:href="@{'/customer/edit/' + ${item.id}}"><i class="fa fa-pencil"></i> Edit</a> |
                     <a th:href="@{'/customer/delete/' + ${item.id}}"><i class="fa fa-remove"></i> Delete</a>
                 </td>

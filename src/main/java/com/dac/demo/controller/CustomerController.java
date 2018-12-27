@@ -14,6 +14,12 @@ public class CustomerController {
     @Autowired
     private CustomerService customerService;
 
+    @GetMapping("/detail/{id}")
+    public String view(@PathVariable("id")Integer id,ModelMap modelMap){
+        modelMap.addAttribute("customer",customerService.findById(id).get());
+        return "/detail";
+    }
+
     @GetMapping("/add")
     public String insert(ModelMap modelMap){
         modelMap.addAttribute("customer", new Customer());
