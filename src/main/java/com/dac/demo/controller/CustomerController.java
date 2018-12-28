@@ -14,50 +14,75 @@ public class CustomerController {
     @Autowired
     private CustomerService customerService;
 
+    final int passwordLength = 45;
+
     @GetMapping("/detail/{id}")
-    public String view(@PathVariable("id")Integer id,ModelMap modelMap){
-        modelMap.addAttribute("customer",customerService.findById(id).get());
+    public String view(@PathVariable("id") Integer id, ModelMap modelMap) {
+        modelMap.addAttribute("customer", customerService.findById(id).get());
         return "/detail";
     }
 
     @GetMapping("/add")
-    public String insert(ModelMap modelMap){
+    public String insert(ModelMap modelMap) {
         modelMap.addAttribute("customer", new Customer());
         return "/create";
     }
 
     @PostMapping("/add")
-    public String insertSubmit(@ModelAttribute("customer") Customer customer){
-        Customer cus = new Customer();
-        cus.setUserName(customer.getUserName());
-        cus.setPassword(customer.getPassword());
-        cus.setFullName(customer.getFullName());
-        cus.setEmail(customer.getEmail());
-        cus.setDob(customer.getDob());
+    public String insertSubmit(@ModelAttribute("customer") Customer customer,ModelMap modelMap) {
 
-        customerService.save(cus);
-        return "redirect:/employee/dashboard";
+        Customer cus = null;
+        if (customerService.findByUserName(customer.getUserName()) == null) {
+            //user name not in database
+            if(customer.getPassword().length() <= passwordLength){
+                //password length <= 45
+                cus = new Customer();
+                cus.setUserName(customer.getUserName());
+                cus.setPassword(customer.getPassword());
+                cus.setFullName(customer.getFullName());
+                cus.setEmail(customer.getEmail());
+                cus.setDob(customer.getDob());
+                customerService.save(cus);
+                return "redirect:/employee/dashboard";
+            }
+            else {
+                // password length > 45
+                modelMap.put("message","Password less than 45 characters!");
+                return  "/create";
+            }
+        }
+        else {
+            // user name in database
+            modelMap.put("message","User name already exist, please choose another user name!");
+            return "/create";
+        }
     }
 
     @GetMapping("/edit/{id}")
-    public String edit(ModelMap modelMap, @PathVariable("id") Integer id){
-        modelMap.addAttribute("customer",customerService.findById(id).get());
+    public String edit(ModelMap modelMap, @PathVariable("id") Integer id) {
+        modelMap.addAttribute("customer", customerService.findById(id).get());
         return "/edit";
     }
 
     @PostMapping("/edit")
-    public String editSubmit(@ModelAttribute("customer")Customer customer){
-        Customer cus = customerService.findById(customer.getId()).get();
-        cus.setPassword(customer.getPassword());
-        cus.setFullName(customer.getFullName());
-        cus.setEmail(customer.getEmail());
-        cus.setDob(customer.getDob());
-        customerService.save(cus);
-        return "redirect:/employee/dashboard";
+    public String editSubmit(@ModelAttribute("customer") Customer customer, ModelMap modelMap) {
+        if(customer.getPassword().length() <= passwordLength) {
+            Customer cus = customerService.findById(customer.getId()).get();
+            cus.setPassword(customer.getPassword());
+            cus.setFullName(customer.getFullName());
+            cus.setEmail(customer.getEmail());
+            cus.setDob(customer.getDob());
+            customerService.save(cus);
+            return "redirect:/employee/dashboard";
+        }
+        else {
+            modelMap.put("message","Password less than 45 characters!");
+            return "/edit";
+        }
     }
 
     @GetMapping("/delete/{id}")
-    public String delete(@PathVariable("id")Integer id){
+    public String delete(@PathVariable("id") Integer id) {
         customerService.deleteById(id);
         return "redirect:/employee/dashboard";
     }

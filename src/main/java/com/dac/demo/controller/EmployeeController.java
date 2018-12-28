@@ -38,7 +38,7 @@ public class EmployeeController {
             // found employee
             if(employee.getPassword().equals(password)){
                 //password match
-                return "redirect:/admin/dashboard";
+                return "redirect:/employee/dashboard";
             }
             else {
                 //password not match

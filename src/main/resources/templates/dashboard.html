@@ -39,14 +39,14 @@
                 <td>
                     <a th:href="@{'/customer/detail/' + ${item.id}}"><i class="fa fa-eye"></i> Detail</a> |
                     <a th:href="@{'/customer/edit/' + ${item.id}}"><i class="fa fa-pencil"></i> Edit</a> |
-                    <a th:href="@{'/customer/delete/' + ${item.id}}"><i class="fa fa-remove"></i> Delete</a>
+                    <a th:href="@{'/customer/delete/' + ${item.id}}"><i class="fa fa-trash"></i> Delete</a>
                 </td>
             </tr>
         </table>
     </div>
 </div>
 
-<link rel="stylesheet" th:href="@{/css/dashboard.css}" type="text/css"/>
+<link th:href="@{/css/dashboard.css}" rel="stylesheet" type="text/css"/>
 <script th:src="@{/js/jquery-3.3.1.js}" type="text/javascript"></script>
 <script th:src="@{/js/bootstrap.min.js}" type="text/javascript"></script>
 </body>

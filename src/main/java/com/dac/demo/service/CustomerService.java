@@ -13,4 +13,6 @@ public interface CustomerService {
     Optional<Customer> findById(Integer id);
 
     void deleteById(Integer id);
+
+    Customer findByUserName(String userName);
 }
