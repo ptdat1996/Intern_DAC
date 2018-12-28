@@ -49,3 +49,21 @@ table tr:nth-child(even) {
 table tr:nth-child(odd) {
     background-color: #fff;
 }
+
+.modal {
+    text-align: center;
+    padding: 0!important;
+}
+
+.modal:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.modal-dialog {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+}

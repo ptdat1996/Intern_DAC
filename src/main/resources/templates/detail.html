@@ -45,7 +45,7 @@
         <tr>
             <td>Date of birth :</td>
             <td>
-                <span th:text="${customer.dob}"></span>
+                <span th:text="${#dates.format(customer.dob, 'dd-MM-yyyy')}"></span>
             </td>
         </tr>
 
