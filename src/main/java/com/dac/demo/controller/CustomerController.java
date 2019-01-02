@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 @RequestMapping("/customer")
 public class CustomerController {
@@ -17,13 +19,19 @@ public class CustomerController {
     final int passwordLength = 45;
 
     @GetMapping("/detail/{id}")
-    public String view(@PathVariable("id") Integer id, ModelMap modelMap) {
+    public String view(@PathVariable("id") Integer id, ModelMap modelMap, HttpSession session) {
+        if(session.getAttribute("role") == null || session.getAttribute("role") == "employee"){
+            return "redirect:/employee/login";
+        }
         modelMap.addAttribute("customer", customerService.findById(id).get());
         return "/detail";
     }
 
     @GetMapping("/add")
-    public String insert(ModelMap modelMap) {
+    public String insert(ModelMap modelMap,HttpSession session) {
+        if(session.getAttribute("role") == null){
+            return "redirect:/employee/login";
+        }
         modelMap.addAttribute("customer", new Customer());
         return "/create";
     }
@@ -59,7 +67,10 @@ public class CustomerController {
     }
 
     @GetMapping("/edit/{id}")
-    public String edit(ModelMap modelMap, @PathVariable("id") Integer id) {
+    public String edit(ModelMap modelMap, @PathVariable("id") Integer id,HttpSession session) {
+        if(session.getAttribute("role") != "admin"){
+            return "redirect:/employee/login";
+        }
         modelMap.addAttribute("customer", customerService.findById(id).get());
         return "/edit";
     }
@@ -82,7 +93,10 @@ public class CustomerController {
     }
 
     @GetMapping("/delete/{id}")
-    public String delete(@PathVariable("id") Integer id) {
+    public String delete(@PathVariable("id") Integer id,HttpSession session) {
+        if(session.getAttribute("role") != "admin"){
+            return "redirect:/employee/login";
+        }
         customerService.deleteById(id);
         return "redirect:/employee/dashboard";
     }
