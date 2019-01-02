@@ -28,7 +28,8 @@
                 <th>Full name</th>
                 <th>Email</th>
                 <th>Date of birth</th>
-                <th>&nbsp;</th>
+                <th th:unless="${session.role == 'employee'}">&nbsp;</th>
+                <!--<th></th>-->
             </tr>
 
             <tr th:each="item :${listCustomer}">
@@ -36,20 +37,25 @@
                 <td th:text="${item.fullName}"></td>
                 <td th:text="${item.email}"></td>
                 <td th:text="${#dates.format(item.dob, 'dd-MM-yyyy')}"></td>
-                <td>
-                    <a th:href="@{'/customer/detail/' + ${item.id}}"><i class="fa fa-eye"></i> Detail</a> |
-                    <a th:href="@{'/customer/edit/' + ${item.id}}"><i class="fa fa-pencil"></i> Edit</a> |
-                    <a th:href="@{'#myModal_' + ${item.id}}" role="button" data-toggle="modal"><i
-                            class="fa fa-trash"></i> Delete</a>
+                <td th:unless="${session.role == 'employee'}"  th:switch="${session.role}">
+                    <div th:case="'admin'">
+                        <a th:href="@{'/customer/detail/' + ${item.id}}"><i class="fa fa-eye"></i> Detail</a> |
+                        <a th:href="@{'/customer/edit/' + ${item.id}}"><i class="fa fa-pencil"></i> Edit</a> |
+                        <a th:href="@{'#myModal_' + ${item.id}}" role="button" data-toggle="modal">
+                            <i class="fa fa-trash"></i> Delete</a>
+                    </div>
+
+                    <div th:case="'manager'">
+                        <a th:href="@{'/customer/detail/' + ${item.id}}"><i class="fa fa-eye"></i> Detail</a>
+                    </div>
+
                 </td>
 
-                <div th:id="'myModal_' + ${item.id}" class="modal fade">
+                <div th:if="${session.role == 'admin'}" th:id="'myModal_' + ${item.id}" class="modal fade">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                    &times;
-                                </button>
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                 <h4 class="modal-title">Confirm Delete</h4>
                             </div>
 

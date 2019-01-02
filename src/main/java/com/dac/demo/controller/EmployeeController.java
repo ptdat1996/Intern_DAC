@@ -25,38 +25,49 @@ public class EmployeeController {
 
     // go to login page
     @GetMapping("/login")
-    public String login(){
+    public String login() {
         return "/login";
     }
 
     @PostMapping("/login")
-    public String checkLogin(@RequestParam("userName")String userName,
+    public String checkLogin(@RequestParam("userName") String userName,
                              @RequestParam("password") String password,
                              HttpSession session,
-                             ModelMap modelMap){
+                             ModelMap modelMap) {
         Employee employee = employeeService.findByUserName(userName);
-        if(employee != null){
+        if (employee != null) {
             // found employee
-            if(employee.getPassword().equals(password)){
+            if (employee.getPassword().equals(password)) {
                 //password match
+                switch (employee.getRole()) {
+                    case "Admin":
+                        session.setAttribute("role", "admin");
+                        break;
+                    case "Manager":
+                        session.setAttribute("role", "manager");
+                        break;
+                    case "Employee":
+                        session.setAttribute("role", "employee");
+                        break;
+                    default:
+                        break;
+                }
                 return "redirect:/employee/dashboard";
-            }
-            else {
+            } else {
                 //password not match
-                modelMap.put("message","Wrong password!");
+                modelMap.put("message", "Wrong password!");
                 return "/login";
             }
-        }
-        else {
+        } else {
             // not found
-            modelMap.put("message","Wrong username!");
+            modelMap.put("message", "Wrong username!");
             return "/login";
         }
     }
 
     @GetMapping("/dashboard")
-    public String dashboard(ModelMap modelMap){
-        modelMap.addAttribute("listCustomer",customerService.findAll());
+    public String dashboard(ModelMap modelMap) {
+        modelMap.addAttribute("listCustomer", customerService.findAll());
         return "/dashboard";
     }
 }
