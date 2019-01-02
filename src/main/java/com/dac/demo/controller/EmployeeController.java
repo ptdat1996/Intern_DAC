@@ -32,7 +32,8 @@ public class EmployeeController {
     @PostMapping("/login")
     public String checkLogin(@RequestParam("userName")String userName,
                              @RequestParam("password") String password,
-                             HttpSession session){
+                             HttpSession session,
+                             ModelMap modelMap){
         Employee employee = employeeService.findByUserName(userName);
         if(employee != null){
             // found employee
@@ -42,12 +43,14 @@ public class EmployeeController {
             }
             else {
                 //password not match
-                return "/error";
+                modelMap.put("message","Wrong password!");
+                return "/login";
             }
         }
         else {
             // not found
-            return "/error";
+            modelMap.put("message","Wrong username!");
+            return "/login";
         }
     }
 

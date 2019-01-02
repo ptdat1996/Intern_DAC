@@ -39,6 +39,11 @@
             <div class="form-button">
                 <button class="btn-login">LOGIN</button>
             </div>
+
+            <div th:if="${message}" class="form-message">
+                <label th:text="${message}"></label>
+            </div>
+
         </form>
     </div>
 </div>

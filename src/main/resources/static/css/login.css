@@ -17,7 +17,7 @@
     z-index: 1;
 }
 
-.background-login::before{
+.background-login::before {
     content: '';
     display: block;
     position: absolute;
@@ -26,7 +26,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    background:  linear-gradient(90deg, rgba(0,168,255,0.5), rgba(185,0,255,0.5))
+    background: linear-gradient(90deg, rgba(0, 168, 255, 0.5), rgba(185, 0, 255, 0.5))
 }
 
 /*----------------container---------------------*/
@@ -69,7 +69,7 @@
 input {
     outline: 0;
     border-width: 0 0 2px;
-    border-color:  #4b2354;
+    border-color: #4b2354;
 }
 
 input:focus {
@@ -104,68 +104,13 @@ input:focus {
     border: none;
 }
 
-/*-------------------login with another text---------------------*/
-.form-login-with-another {
-    text-align: center;
-}
-
-.form-login-with-another p {
-    font-size: 16px;
-    color: #999999;
-}
-
-/*-------------------login with social---------------------*/
-.social-login {
-    display: grid;
-    margin-bottom: 30px;
-}
-
-.social-login .btn-login-facebook,
-.social-login .btn-login-google {
-    width: 100%;
-    height: 50px;
-    margin-bottom: 10px;
-    font-size: 14px;
-    border-radius: 25px;
-    color: white;
-    border: 0;
-    
-}
-
-.social-login .btn-login-facebook {
-    background-color: #395697;
-}
-
-.social-login .btn-login-google {
-    background-color: #E74B37;
-}
-
-.social-login i {
-    margin-right: 10px;
-}
-
-/*-------------------forgot password---------------------*/
-.forgot-password {
-    text-align: center;
-}
-
-.forgot-password a {
-    font-size: 16px;
-    color: #4b2354;
-}
-
-/*-------------------sign up---------------------*/
-.go-sign-up {
-    padding: 0 0 20px 0;
-    text-align: center;
-}
-.go-sign-up a {
-    font-size: 16px;
-    color: #4b2354;
+/*-------------------message text-----------------------*/
+.form-message {
+    color: red;
 }
 
 /*-------------------responsive---------------------*/
-@media(max-width : 400px) {
+@media (max-width: 400px) {
     .background-login {
         height: auto;
     }

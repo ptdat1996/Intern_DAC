@@ -39,7 +39,6 @@
                 <td>
                     <a th:href="@{'/customer/detail/' + ${item.id}}"><i class="fa fa-eye"></i> Detail</a> |
                     <a th:href="@{'/customer/edit/' + ${item.id}}"><i class="fa fa-pencil"></i> Edit</a> |
-                    <!--<a th:href="@{'/customer/delete/' + ${item.id}}"><i class="fa fa-trash"></i> Delete</a>-->
                     <a th:href="@{'#myModal_' + ${item.id}}" role="button" data-toggle="modal"><i
                             class="fa fa-trash"></i> Delete</a>
                 </td>
