@@ -70,4 +70,13 @@ public class EmployeeController {
         modelMap.addAttribute("listCustomer", customerService.findAll());
         return "/dashboard";
     }
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session){
+        if(session.getAttribute("role") != null){
+            session.removeAttribute("role");
+            return "redirect:/employee/login";
+        }
+        return "redirect:/employee/login";
+    }
 }

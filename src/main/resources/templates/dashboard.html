@@ -12,6 +12,13 @@
 </head>
 <body>
 <div class="container">
+
+    <div class="greeting-user">
+        <div class="greeting-content">
+            <span th:text="'Hello ' + ${session.role}"></span>
+            <a th:href="@{/employee/logout}">Logout</a>
+        </div>
+    </div>
     <h1>Welcome to my demo</h1>
 
     <div class="container-button">
@@ -29,7 +36,6 @@
                 <th>Email</th>
                 <th>Date of birth</th>
                 <th th:unless="${session.role == 'employee'}">&nbsp;</th>
-                <!--<th></th>-->
             </tr>
 
             <tr th:each="item :${listCustomer}">

@@ -52,7 +52,7 @@ table tr:nth-child(odd) {
 
 .modal {
     text-align: center;
-    padding: 0!important;
+    padding: 0 !important;
 }
 
 .modal:before {
@@ -66,4 +66,15 @@ table tr:nth-child(odd) {
     display: inline-block;
     text-align: left;
     vertical-align: middle;
+}
+
+.greeting-user {
+    position: relative;
+    height: 40px;
+}
+
+.greeting-content{
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
