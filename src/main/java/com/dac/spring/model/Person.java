@@ -1,4 +1,4 @@
-package com.dac.spring;
+package com.dac.spring.model;
 
 public class Person {
     private String firstName;

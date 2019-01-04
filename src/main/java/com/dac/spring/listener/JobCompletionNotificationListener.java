@@ -1,5 +1,6 @@
-package com.dac.spring;
+package com.dac.spring.listener;
 
+import com.dac.spring.model.Person;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.core.BatchStatus;
