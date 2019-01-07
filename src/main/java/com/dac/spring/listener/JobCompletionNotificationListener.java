@@ -1,6 +1,6 @@
 package com.dac.spring.listener;
 
-import com.dac.spring.model.Person;
+import com.dac.spring.model.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.core.BatchStatus;
@@ -27,11 +27,11 @@ public class JobCompletionNotificationListener extends JobExecutionListenerSuppo
         if(jobExecution.getStatus() == BatchStatus.COMPLETED) {
             log.info("!!! JOB FINISHED! Time to verify the results");
 
-            jdbcTemplate.query("SELECT first_name, last_name FROM people",
-                    (rs, row) -> new Person(
+            jdbcTemplate.query("SELECT first_name, last_name FROM user",
+                    (rs, row) -> new User(
                             rs.getString(1),
                             rs.getString(2))
-            ).forEach(person -> log.info("Found <" + person + "> in the database."));
+            ).forEach(user -> log.info("Found <" + user + "> in the database."));
         }
     }
 }

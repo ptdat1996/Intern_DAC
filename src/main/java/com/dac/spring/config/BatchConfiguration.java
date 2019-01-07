@@ -1,8 +1,8 @@
 package com.dac.spring.config;
 
 import com.dac.spring.listener.JobCompletionNotificationListener;
-import com.dac.spring.processor.PersonItemProcessor;
-import com.dac.spring.model.Person;
+import com.dac.spring.processor.UserItemProcessor;
+import com.dac.spring.model.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.core.Job;
@@ -39,36 +39,6 @@ public class BatchConfiguration {
     @Autowired
     public DataSource dataSource;
 
-    @Bean
-    public FlatFileItemReader<Person> reader() {
-        log.info("read file");
-        FlatFileItemReader<Person> reader = new FlatFileItemReader<>();
-        reader.setResource(new ClassPathResource("user-data.csv"));
-        reader.setLineMapper(new DefaultLineMapper<Person>(){{
-            setLineTokenizer(new DelimitedLineTokenizer(){{
-                setNames(new String[]{"firstName", "lastName"});
-            }});
-            setFieldSetMapper(new BeanWrapperFieldSetMapper<Person>(){{
-                setTargetType(Person.class);
-            }});
-        }});
-        return reader;
-    }
-
-    @Bean
-    public PersonItemProcessor processor() {
-        return new PersonItemProcessor();
-    }
-
-    @Bean
-    public JdbcBatchItemWriter<Person> writer() {
-        log.info("write database");
-        JdbcBatchItemWriter<Person> writer = new JdbcBatchItemWriter<>();
-        writer.setItemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<>());
-        writer.setSql("INSERT INTO people(first_name, last_name) VALUES (:firstName, :lastName)");
-        writer.setDataSource(dataSource);
-        return writer;
-    }
 
     @Bean
     public Job importUserJob(JobCompletionNotificationListener listener) {
@@ -85,10 +55,42 @@ public class BatchConfiguration {
     public Step step1() {
         log.info("start step");
         return stepBuilderFactory.get("step1")
-                .<Person, Person> chunk(10)
+                .<User, User> chunk(10)
                 .reader(reader())
                 .processor(processor())
                 .writer(writer())
                 .build();
     }
+
+    @Bean
+    public FlatFileItemReader<User> reader() {
+        log.info("read file");
+        FlatFileItemReader<User> reader = new FlatFileItemReader<>();
+        reader.setResource(new ClassPathResource("user-data.csv"));
+        reader.setLineMapper(new DefaultLineMapper<User>(){{
+            setLineTokenizer(new DelimitedLineTokenizer(){{
+                setNames(new String[]{"firstName", "lastName"});
+            }});
+            setFieldSetMapper(new BeanWrapperFieldSetMapper<User>(){{
+                setTargetType(User.class);
+            }});
+        }});
+        return reader;
+    }
+
+    @Bean
+    public UserItemProcessor processor() {
+        return new UserItemProcessor();
+    }
+
+    @Bean
+    public JdbcBatchItemWriter<User> writer() {
+        log.info("write database");
+        JdbcBatchItemWriter<User> writer = new JdbcBatchItemWriter<>();
+        writer.setItemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<>());
+        writer.setSql("INSERT INTO user(first_name, last_name) VALUES (:firstName, :lastName)");
+        writer.setDataSource(dataSource);
+        return writer;
+    }
+
 }
