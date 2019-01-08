@@ -4,7 +4,7 @@ package com.dac.demo.config;
 import com.dac.demo.listener.JobCompletionNotificationListener;
 import com.dac.demo.model.Customer;
 import com.dac.demo.processor.CustomerImportProcessor;
-import com.dac.demo.reader.CustomerReaderImportCSV;
+import com.dac.demo.reader.CustomerImportReaderCSV;
 import com.dac.demo.util.Constant;
 import com.dac.demo.writer.CustomerImportWriter;
 import org.springframework.batch.core.Job;
@@ -45,7 +45,7 @@ public class BatchConfiguration {
 
     @Bean
     public FlatFileItemReader<Customer> reader() {
-        return new CustomerReaderImportCSV().readerCSV(Constant.CUSTOMER_DATA_IMPORT_FILE);
+        return new CustomerImportReaderCSV().readerCSV(Constant.CUSTOMER_DATA_IMPORT_FILE);
     }
 
     @Bean

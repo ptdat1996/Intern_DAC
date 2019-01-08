@@ -28,7 +28,7 @@ public class CustomerImportWriter extends AbsWriter<Customer> {
     public void write(List<? extends Customer> list) throws Exception {
         log.info("Begin write");
         JdbcBatchItemWriter<Customer> writer = new JdbcBatchItemWriter<>();
-        writer.setItemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<Customer>());
+        writer.setItemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<>());
         writer.setDataSource(dataSource);
         writer.setSql(getSQLString());
         writer.afterPropertiesSet();

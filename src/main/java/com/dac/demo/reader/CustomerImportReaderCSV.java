@@ -10,9 +10,9 @@ import org.springframework.batch.item.file.transform.FieldSet;
 import java.time.LocalDate;
 
 
-public class CustomerReaderImportCSV extends AbsReader<Customer> {
+public class CustomerImportReaderCSV extends AbsReader<Customer> {
 
-    private final Logger log = LoggerFactory.getLogger(CustomerReaderImportCSV.class);
+    private final Logger log = LoggerFactory.getLogger(CustomerImportReaderCSV.class);
 
 
     @Override

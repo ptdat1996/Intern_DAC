@@ -1,13 +1,10 @@
 package com.dac.demo.model;
 
-import java.time.LocalDate;
-
-public class Customer  {
+public class CustomerResult {
 
     private int id;
     private String name;
-    private LocalDate dob;
-
+    private int age;
 
     public int getId() {
         return id;
@@ -25,12 +22,11 @@ public class Customer  {
         this.name = name;
     }
 
-    public LocalDate getDob() {
-        return dob;
+    public int getAge() {
+        return age;
     }
 
-    public void setDob(LocalDate dob) {
-        this.dob = dob;
+    public void setAge(int age) {
+        this.age = age;
     }
-
 }
