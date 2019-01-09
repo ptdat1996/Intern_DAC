@@ -1,7 +1,7 @@
 package com.dac.demo.reader;
 
 import com.dac.demo.model.Customer;
-import com.dac.demo.util.Constant;
+import com.dac.demo.util.ResourceConstant;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.*;
@@ -21,7 +21,7 @@ public class CustomerExportReader {
     public ItemReader<Customer> reader(){
         JdbcCursorItemReader<Customer> reader = new JdbcCursorItemReader<>();
         reader.setDataSource(dataSource());
-        reader.setSql(Constant.GET_CUSTOMER);
+        reader.setSql(ResourceConstant.GET_CUSTOMER);
         reader.setRowMapper((rs,i)->{
             Customer customer = new Customer();
             customer.setId(rs.getInt("id"));

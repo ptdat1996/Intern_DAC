@@ -1,7 +1,7 @@
 package com.dac.demo.writer;
 
 import com.dac.demo.model.CustomerResult;
-import com.dac.demo.util.Constant;
+import com.dac.demo.util.ResourceConstant;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.file.FlatFileItemWriter;
@@ -20,7 +20,7 @@ public class CustomerExportWriter {
         log.info("Begin write");
         FlatFileItemWriter<CustomerResult> writer = new FlatFileItemWriter<>();
         try {
-            writer.setResource(new FileUrlResource(Constant.CUSTOMER_DATA_EXPORT_FILE));
+            writer.setResource(new FileUrlResource(ResourceConstant.CUSTOMER_DATA_EXPORT_FILE));
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }

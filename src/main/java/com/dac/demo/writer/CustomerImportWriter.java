@@ -2,7 +2,7 @@ package com.dac.demo.writer;
 
 import com.dac.demo.model.Customer;
 import com.dac.demo.util.AbsWriter;
-import com.dac.demo.util.Constant;
+import com.dac.demo.util.ResourceConstant;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.database.BeanPropertyItemSqlParameterSourceProvider;
@@ -21,7 +21,7 @@ public class CustomerImportWriter extends AbsWriter<Customer> {
 
     @Override
     public String getSQLString() {
-        return Constant.INSERT_CUSTOMER;
+        return ResourceConstant.INSERT_OR_UPDATE_CUSTOMER;
     }
 
     @Override

@@ -5,7 +5,7 @@ import com.dac.demo.listener.JobCompletionNotificationListener;
 import com.dac.demo.model.Customer;
 import com.dac.demo.processor.CustomerImportProcessor;
 import com.dac.demo.reader.CustomerImportReaderCSV;
-import com.dac.demo.util.Constant;
+import com.dac.demo.util.ResourceConstant;
 import com.dac.demo.writer.CustomerImportWriter;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
@@ -42,7 +42,7 @@ public class CSVToDatabaseConfiguration {
 
     @Bean
     public FlatFileItemReader<Customer> readerCSV() {
-        return new CustomerImportReaderCSV().readerCSV(Constant.CUSTOMER_DATA_IMPORT_FILE);
+        return new CustomerImportReaderCSV().readerCSV(ResourceConstant.CUSTOMER_DATA_IMPORT_FILE);
     }
 
     @Bean

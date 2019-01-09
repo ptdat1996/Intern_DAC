@@ -1,6 +1,6 @@
 package com.dac.demo.listener;
 
-import com.dac.demo.util.Constant;
+import com.dac.demo.util.ResourceConstant;
 import org.springframework.batch.core.BatchStatus;
 import org.springframework.batch.core.JobExecution;
 import org.springframework.batch.core.listener.JobExecutionListenerSupport;
@@ -25,7 +25,7 @@ public class JobCompletionNotificationListener extends JobExecutionListenerSuppo
     @Override
     public void afterJob(JobExecution jobExecution) {
         if(jobExecution.getStatus() == BatchStatus.COMPLETED) {
-            int size = jdbcTemplate.queryForList(Constant.GET_CUSTOMER).size();
+            int size = jdbcTemplate.queryForList(ResourceConstant.GET_CUSTOMER).size();
             log.info("Found <" + size + "> in database");
         }
     }
