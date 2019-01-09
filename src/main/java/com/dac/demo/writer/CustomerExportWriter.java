@@ -12,9 +12,9 @@ import org.springframework.core.io.FileUrlResource;
 
 import java.net.MalformedURLException;
 
-public class CustomerWriter {
+public class CustomerExportWriter {
 
-    private final Logger log = LoggerFactory.getLogger(CustomerWriter.class);
+    private final Logger log = LoggerFactory.getLogger(CustomerExportWriter.class);
 
     public FlatFileItemWriter<CustomerResult> writer(){
         log.info("Begin write");

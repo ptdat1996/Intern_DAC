@@ -11,9 +11,9 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import javax.sql.DataSource;
 
-public class CustomerReader {
+public class CustomerExportReader {
 
-    private static final Logger log = LoggerFactory.getLogger(CustomerReader.class);
+    private static final Logger log = LoggerFactory.getLogger(CustomerExportReader.class);
 
     @Autowired
     public DataSource dataSource;

@@ -2,9 +2,9 @@ package com.dac.demo.config;
 
 import com.dac.demo.model.Customer;
 import com.dac.demo.model.CustomerResult;
-import com.dac.demo.processor.CustomerProcessor;
-import com.dac.demo.reader.CustomerReader;
-import com.dac.demo.writer.CustomerWriter;
+import com.dac.demo.processor.CustomerExportProcessor;
+import com.dac.demo.reader.CustomerExportReader;
+import com.dac.demo.writer.CustomerExportWriter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.core.Job;
@@ -48,17 +48,17 @@ public class DatabaseToCSVConfiguration {
     }
     @Bean(destroyMethod = "")
     public ItemReader<Customer> readerDatabase(){
-        return new CustomerReader().reader();
+        return new CustomerExportReader().reader();
     }
 
     @Bean
-    public CustomerProcessor processorDatabase(){
-        return new CustomerProcessor();
+    public CustomerExportProcessor processorDatabase(){
+        return new CustomerExportProcessor();
     }
 
     @Bean(destroyMethod = "")
     public ItemWriter<CustomerResult> writerCSV(){
-        return new CustomerWriter().writer();
+        return new CustomerExportWriter().writer();
     }
 
 }

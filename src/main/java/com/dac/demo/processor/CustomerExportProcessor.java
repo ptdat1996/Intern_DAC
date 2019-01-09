@@ -8,9 +8,9 @@ import org.springframework.batch.item.ItemProcessor;
 
 import java.util.Calendar;
 
-public class CustomerProcessor implements ItemProcessor<Customer, CustomerResult> {
+public class CustomerExportProcessor implements ItemProcessor<Customer, CustomerResult> {
 
-    private static final Logger log = LoggerFactory.getLogger(CustomerProcessor.class);
+    private static final Logger log = LoggerFactory.getLogger(CustomerExportProcessor.class);
 
     @Override
     public CustomerResult process(Customer customer) throws Exception {
