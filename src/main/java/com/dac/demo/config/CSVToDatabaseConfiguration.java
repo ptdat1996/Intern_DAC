@@ -9,7 +9,6 @@ import com.dac.demo.util.Constant;
 import com.dac.demo.writer.CustomerImportWriter;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
-import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.core.launch.support.RunIdIncrementer;
@@ -21,7 +20,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @Configuration
-@EnableBatchProcessing
 public class CSVToDatabaseConfiguration {
 
     private static final Logger log = LoggerFactory.getLogger(CSVToDatabaseConfiguration.class);
@@ -34,7 +32,6 @@ public class CSVToDatabaseConfiguration {
 
     @Bean
     public Job importCustomer(JobCompletionNotificationListener listener){
-        log.info("Begin job");
         return jobBuilderFactory.get("importCustomer")
                 .incrementer(new RunIdIncrementer())
                 .listener(listener)
@@ -44,28 +41,27 @@ public class CSVToDatabaseConfiguration {
     }
 
     @Bean
-    public FlatFileItemReader<Customer> reader() {
+    public FlatFileItemReader<Customer> readerCSV() {
         return new CustomerImportReaderCSV().readerCSV(Constant.CUSTOMER_DATA_IMPORT_FILE);
     }
 
     @Bean
-    public CustomerImportProcessor processor() {
+    public CustomerImportProcessor processorCSV() {
         return new CustomerImportProcessor();
     }
 
     @Bean
-    public CustomerImportWriter writer() {
+    public CustomerImportWriter writerDatabase() {
         return new CustomerImportWriter();
     }
 
     @Bean
     public Step stepCustomer() {
-        log.info("Start step");
         return stepBuilderFactory.get("stepCustomer")
                 .<Customer, Customer>chunk(10)
-                .reader(reader())
-                .processor(processor())
-                .writer(writer())
+                .reader(readerCSV())
+                .processor(processorCSV())
+                .writer(writerDatabase())
                 .build();
     }
 

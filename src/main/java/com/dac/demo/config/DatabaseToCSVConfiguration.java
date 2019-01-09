@@ -9,7 +9,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
-import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.core.launch.support.RunIdIncrementer;
@@ -20,7 +19,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@EnableBatchProcessing
 public class DatabaseToCSVConfiguration {
 
     private static final Logger log = LoggerFactory.getLogger(DatabaseToCSVConfiguration.class);
@@ -32,7 +30,7 @@ public class DatabaseToCSVConfiguration {
     public StepBuilderFactory stepBuilderFactory;
 
     @Bean
-    public Job exportJob(){
+    public Job exportCustomer(){
         return jobBuilderFactory.get("exportJob")
                 .incrementer(new RunIdIncrementer())
                 .flow(step())
@@ -43,23 +41,23 @@ public class DatabaseToCSVConfiguration {
     public Step step(){
         return stepBuilderFactory.get("step")
                 .<Customer, CustomerResult>chunk(10)
-                .reader(reader())
-                .processor(processor())
-                .writer(writer())
+                .reader(readerDatabase())
+                .processor(processorDatabase())
+                .writer(writerCSV())
                 .build();
     }
     @Bean(destroyMethod = "")
-    public ItemReader<Customer> reader(){
+    public ItemReader<Customer> readerDatabase(){
         return new CustomerReader().reader();
     }
 
     @Bean
-    public CustomerProcessor processor(){
+    public CustomerProcessor processorDatabase(){
         return new CustomerProcessor();
     }
 
     @Bean(destroyMethod = "")
-    public ItemWriter<CustomerResult> writer(){
+    public ItemWriter<CustomerResult> writerCSV(){
         return new CustomerWriter().writer();
     }
 
