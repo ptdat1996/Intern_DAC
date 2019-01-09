@@ -21,9 +21,9 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @EnableBatchProcessing
-public class BatchConfig {
+public class DatabaseToCSVConfiguration {
 
-    private static final Logger log = LoggerFactory.getLogger(BatchConfig.class);
+    private static final Logger log = LoggerFactory.getLogger(DatabaseToCSVConfiguration.class);
 
     @Autowired
     public JobBuilderFactory jobBuilderFactory;

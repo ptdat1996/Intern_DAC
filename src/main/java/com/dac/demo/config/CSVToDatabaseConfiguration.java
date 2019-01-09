@@ -22,9 +22,9 @@ import org.slf4j.LoggerFactory;
 
 @Configuration
 @EnableBatchProcessing
-public class BatchConfiguration {
+public class CSVToDatabaseConfiguration {
 
-    private static final Logger log = LoggerFactory.getLogger(BatchConfiguration.class);
+    private static final Logger log = LoggerFactory.getLogger(CSVToDatabaseConfiguration.class);
 
     @Autowired
     public JobBuilderFactory jobBuilderFactory;
