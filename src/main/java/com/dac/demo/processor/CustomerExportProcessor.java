@@ -14,13 +14,13 @@ public class CustomerExportProcessor implements ItemProcessor<Customer, Customer
 
     @Override
     public CustomerResult process(Customer customer) throws Exception {
-        log.info("Begin processor");
         CustomerResult customerResult = new CustomerResult();
         customerResult.setId(customer.getId());
         customerResult.setName(customer.getName());
         int currentYear = Calendar.getInstance().get(Calendar.YEAR);
         int birthYear = customer.getDob().getYear();
         customerResult.setAge(currentYear - birthYear);
+        log.info("Calculate age of Customer<" + customer.getId() + "> : " + (currentYear - birthYear));
         return customerResult;
     }
 }

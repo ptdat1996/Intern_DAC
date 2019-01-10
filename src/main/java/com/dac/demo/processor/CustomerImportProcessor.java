@@ -6,21 +6,23 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemProcessor;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-public class CustomerImportProcessor implements ItemProcessor<Customer,Customer> {
+
+public class CustomerImportProcessor implements ItemProcessor<Customer, Customer> {
+
     private final Logger log = LoggerFactory.getLogger(CustomerImportProcessor.class);
-
 
     @Override
     public Customer process(Customer customer) throws Exception {
-        log.info("Begin process");
+        if(customer.getName() == null){
+            return null;
+        }
         String newName = WordUtils.capitalizeFully(customer.getName());
-        log.info("Convert " +customer.getName() + " to " + newName);
-        Customer cus = new Customer();
-        cus.setName(newName);
-        cus.setDob(customer.getDob());
-
-        log.info("End process");
-        return cus;
+        log.info("Convert " + customer.getName() + " to " + newName);
+        customer.setName(newName);
+        return customer;
     }
 }
